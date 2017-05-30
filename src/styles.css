@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+p2 {
+    padding-bottom: 16px;
+}
+
+.m1 {
+    margin-bottom: 8px;
+}
+.m2 {
+    margin-bottom: 16px;
+}
+.curson-pointer {
+    cursor: pointer;
+}
