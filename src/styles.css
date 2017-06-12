@@ -9,6 +9,12 @@ p2 {
 .m2 {
     margin-bottom: 16px;
 }
-.curson-pointer {
+.m2-top {
+     margin-top: 16px;
+ }
+.cursor-pointer {
     cursor: pointer;
+}
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
 }
