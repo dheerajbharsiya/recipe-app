@@ -17,6 +17,11 @@
 					<a></a> To Shopping List</li>
 				<li><a routerLink="edit">Edit Recipe</a></li>
 				<li><a>Delete Recipe</a></li>
+			<ul class="dropdown-menu">
+				<li class="curson-pointer" (click)="onAddShoppingList()">
+					<a ></a> To Shopping List</li>
+				<li><a (click)="onEditRecipe()" >Edit Recipe</a></li>
+				<li><a >Delete Recipe</a></li>
 			</ul>
 		</div>
 	</div>

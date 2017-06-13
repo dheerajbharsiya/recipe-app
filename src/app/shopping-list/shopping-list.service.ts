@@ -6,18 +6,19 @@ export class ShoppingListService {
     private ingredients: Ingredient[] = [new Ingredient('testIngredient', 2)];
     ingredientAdded = new EventEmitter<Ingredient[]>();
     startEditing = new Subject<number>();
+  
     getIngredients() {
         return this.ingredients.slice();
     }
 
     addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
-        this.ingredientAdded.emit(this.ingredients.slice());
+        this.ingredientAdded.next(this.ingredients.slice());
     }
 
     addIngredients(ingredients: Ingredient[]) {
         this.ingredients.push(...ingredients);
-        this.ingredientAdded.emit(this.ingredients.slice());
+        this.ingredientAdded.next(this.ingredients.slice());
     }
 
     getIngredient(index: number) {
