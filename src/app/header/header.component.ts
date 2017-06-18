@@ -1,4 +1,6 @@
+import { CommonStorage } from './../shared/common-storage.service';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Response } from '@angular/http';
 
 @Component({
     selector: 'app-header',
@@ -6,8 +8,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-   @Output() featureSelected = new EventEmitter<String>();
+    @Output() featureSelected = new EventEmitter<String>();
     onSelect(feature: string) {
         this.featureSelected.emit(feature);
     }
+    constructor(private cmnStorage: CommonStorage) { }
+
+    onSaveData() {
+        this.cmnStorage.storeRecipe().subscribe((response: Response) => {
+            console.log(response);
+        });
+    }
+
 }

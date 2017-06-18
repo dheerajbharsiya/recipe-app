@@ -1,3 +1,5 @@
+import { CommonStorage } from './shared/common-storage.service';
+import { RecipeService } from './recipes/recipes.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -39,7 +41,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService, CommonStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

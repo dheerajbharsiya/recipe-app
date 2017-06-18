@@ -38,7 +38,7 @@ export class RecipeEditComponent implements OnInit {
         for (let ingredient of recipeEdited.ingredients) {
           recipeIngredients.push(new FormGroup({
             'name': new FormControl(ingredient.name, Validators.required),
-            'amount': new FormControl(ingredient.amount,[Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
+            'amount': new FormControl(ingredient.amount, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
           }));
         }
       }
@@ -46,14 +46,15 @@ export class RecipeEditComponent implements OnInit {
 
     this.recipeForm = new FormGroup({
       'name': new FormControl(recipeName, Validators.required),
-      'imagePath': new FormControl(recipeDescription, Validators.required),
+      'imagePath': new FormControl(recipeImagePath, Validators.required),
       'description': new FormControl(recipeDescription, Validators.required),
       'ingredients': recipeIngredients
     });
   };
 
-  onSubmit() {
-    console.log(this.recipeForm);
+  onSubmit(fo) {
+    this.rcpService.updateRecipe(this.recipeForm.value);
+    console.log(this.recipeForm.value);
   }
 
   onAddIngredient() {
