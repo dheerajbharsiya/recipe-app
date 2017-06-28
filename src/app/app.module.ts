@@ -1,3 +1,5 @@
+import { AuthGuard } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
 import { CommonStorage } from './shared/common-storage.service';
 import { RecipeService } from './recipes/recipes.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
@@ -18,6 +20,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { DropdownDirectiveDirective } from './shared/dropdown-directive.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     ShoppingEditComponent,
     DropdownDirectiveDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
 
   imports: [
@@ -41,7 +47,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService, RecipeService, CommonStorage],
+  providers: [ShoppingListService, RecipeService, CommonStorage, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

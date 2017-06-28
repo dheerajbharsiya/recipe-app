@@ -38,4 +38,9 @@ export class RecipeService {
         this.recipes.splice(index, 1);
         this.recipesChange.next(this.recipes.slice());
     }
+
+    setRecipes (recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChange.next(this.recipes.slice());
+    }
 }
